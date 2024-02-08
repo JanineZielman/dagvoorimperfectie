@@ -1,0 +1,55 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "night"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "environment",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Deserunt veniam amet ea sit aute dolore sunt magna consequat ut qui proident esse. Labore do nisi deserunt est sunt officia labore dolore veniam aute deserunt."
+        }
+      }
+    ]
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+      "width": 3344,
+      "height": 2509
+    },
+    "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?rect=0%2C1%2C3344%2C2508&w=1080&h=810",
+    "width": 1080,
+    "height": 810,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 1
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "button_text": {
+    "__TYPE__": "FieldContent",
+    "value": "captain",
+    "type": "Text"
+  },
+  "button_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://twitter.com"
+    }
+  }
+}

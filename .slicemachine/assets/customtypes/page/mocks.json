@@ -1,0 +1,22 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "equal"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "cut",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Commodo Lorem ipsum et minim. Consectetur laborum nisi magna magna minim veniam dolore labore voluptate nisi sit. Id est magna in Lorem qui quis nisi adipisicing exercitation dolore."
+        }
+      }
+    ]
+  }
+}
