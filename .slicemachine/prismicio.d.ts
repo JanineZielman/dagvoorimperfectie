@@ -41,6 +41,52 @@ interface PageDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for Settings documents */
+interface SettingsDocumentData {
+    /**
+     * Site Title field in *Settings*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.site_title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    site_title: prismicT.KeyTextField;
+    /**
+     * Site Description field in *Settings*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.site_description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    site_description: prismicT.RichTextField;
+    /**
+     * Image field in *Settings*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Settings document from Prismic
+ *
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 /** Content for Slider Item documents */
 interface SliderItemDocumentData {
     /**
@@ -109,12 +155,12 @@ interface SliderItemDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SliderItemDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SliderItemDocumentData>, "slider_item", Lang>;
-export type AllDocumentTypes = PageDocument | SliderItemDocument;
+export type AllDocumentTypes = PageDocument | SettingsDocument | SliderItemDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocument, SliderItemDocumentData, SliderItemDocument, AllDocumentTypes };
+        export type { PageDocumentData, PageDocument, SettingsDocumentData, SettingsDocument, SliderItemDocumentData, SliderItemDocument, AllDocumentTypes };
     }
 }

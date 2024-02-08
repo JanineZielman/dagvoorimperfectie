@@ -8,12 +8,10 @@ import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
 import Collapsible from 'react-collapsible';
 
-const Index = ({ page, slider_items}) => {
-  console.log(slider_items)
-
+const Index = ({ page, slider_items, settings}) => {
   // initialSlide
 
-  var settings = {
+  var sliderSettings = {
     dots: true,
     centerMode: true,
     infinite: true,
@@ -35,21 +33,22 @@ const Index = ({ page, slider_items}) => {
       },
     ]
   };
+  
   return (
     <Layout>
-      {/* <Head>
-        <title>{prismicH.asText(settings.data.siteTitle)}</title>
-        <meta name="description" content={settings.data.description} />
+      <Head>
+        <title>{settings.data.site_title}</title>
+        <meta name="description" content={settings.data.site_description[0].text} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={prismicH.asText(settings.data.siteTitle)} />
-        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:title" content={settings.data.site_title} />
+        <meta property="og:description" content={settings.data.site_description[0].text} />
         <meta property="og:image" content={settings.data.image.url} />
-      </Head> */}
+      </Head>
       <div className="container">
         <Collapsible>
           <PrismicRichText field={page.data.description}/>
         </Collapsible>
-        <Slider {...settings} className="slider">
+        <Slider {...sliderSettings} className="slider">
           {slider_items.map((item, i) => {
             return(
               <div className="slider-item" key={`slide${i}`}>
@@ -78,13 +77,15 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("page", "home");
+  const settings = await client.getSingle("settings");
   const slider_items = await client.getAllByType("slider_item");
 
 
   return {
     props: {
       slider_items,
-      page
+      page,
+      settings
     },
   };
 }

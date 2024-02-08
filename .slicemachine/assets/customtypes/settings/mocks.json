@@ -1,0 +1,39 @@
+{
+  "site_title": {
+    "__TYPE__": "FieldContent",
+    "value": "walk",
+    "type": "Text"
+  },
+  "site_description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Quis duis ullamco id voluptate non dolor et amet consequat incididunt aute."
+        }
+      }
+    ]
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+      "width": 3024,
+      "height": 3778
+    },
+    "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?rect=0%2C1098%2C3024%2C1583&w=1200&h=628",
+    "width": 1200,
+    "height": 628,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 1098
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  }
+}
