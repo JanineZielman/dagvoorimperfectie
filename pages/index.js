@@ -33,7 +33,7 @@ const Index = ({ page, slider_items}) => {
         <Slider {...settings} className="slider">
           {slider_items.map((item, i) => {
             return(
-              <div className="slider-item">
+              <div className="slider-item" key={`slide${i}`}>
                 <PrismicNextImage field={item.data.image}/>
                 <div className="flex-wrapper">
                   <div className="info-left">
