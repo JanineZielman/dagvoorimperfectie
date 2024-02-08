@@ -6,18 +6,34 @@ import { Layout } from "../components/Layout";
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
 import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
+import Collapsible from 'react-collapsible';
 
 const Index = ({ page, slider_items}) => {
   console.log(slider_items)
+
+  // initialSlide
 
   var settings = {
     dots: true,
     centerMode: true,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 1,
-    centerPadding: "25%",
+    centerPadding: "20%",
     slidesToScroll: 1,
+    cssEase: 'ease',
+    easing: 'ease',
+    dots: false,
+    lazyLoad: 'progressive',
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "1%",
+        }
+      },
+    ]
   };
   return (
     <Layout>
@@ -30,6 +46,9 @@ const Index = ({ page, slider_items}) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head> */}
       <div className="container">
+        <Collapsible>
+          <PrismicRichText field={page.data.description}/>
+        </Collapsible>
         <Slider {...settings} className="slider">
           {slider_items.map((item, i) => {
             return(

@@ -1,29 +1,96 @@
+@font-face {
+  font-family: "IBM";
+  src: url("./IBMPlexSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url("./IBMPlexSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
 body{
   margin: 0;
   padding: 0;
+  font-family: "IBM";
 }
 
 *{
   box-sizing: border-box;
 }
 
+.Collapsible{
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  .Collapsible__trigger {
+    width: 100%;
+    position: absolute;
+    // background-color: red;
+    display: block;
+    cursor: pointer;
+    top: 0;
+    bottom: auto;
+    &:after{
+      content: "";
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      mask-image: url(./SVG/arrow.svg);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      transform: rotate(90deg);
+      background-color: red;
+      left: calc(50% - 25px);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+    &.is-open{
+      bottom: 40px;
+      top: auto;
+      &:after{
+        transform: rotate(90deg) scaleX(-1);
+        margin-top: -20px;
+      }
+    }
+  }
+  .Collapsible__contentOuter{
+    background-color: white;
+    border-bottom: 2px solid red;
+    // padding-bottom: 48px;
+    div{
+      max-width: 900px;
+      margin: auto;
+      padding: 10px;
+      padding-bottom: 48px;
+      width: 100%;
+      p{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 .slider{
-  height: 100vh;
+  // height: 100vh;
   .slider-item{
     // width: 100%;
     display: flex!important;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 24px;
+    padding: 0 12%;
     opacity: 0.5;
     transition: all 0.4s ease;
     position: relative;
     height: 100vh;
     img{
       width: 100%;
-      height: 100vh;
-      object-fit: cover;
+      height: 95vh;
+      margin-top: 7.5vh;
+      object-fit: contain;
+      object-position: top;
       transition: all 0.4s ease;
     }
     .flex-wrapper{
@@ -34,8 +101,9 @@ body{
   .slick-active{
     .slider-item{
       opacity: 1;
+      justify-content: start;
       img{
-        height: 85vh;
+        margin-top: 0;
       }
       .flex-wrapper{
         opacity: 1;
@@ -48,29 +116,74 @@ body{
   display: flex;
   width: 100%;
   align-items: end;
+  justify-content: space-between;
   position: absolute;
   bottom: 0;
-  padding: 0 24px;
+  padding: 0 15%;
   .info-left{
-    width: 50%;
-    padding: 0 14px;
+    width: 60%;
+    background-color: white;
+    padding: 10px;
     h2{
       margin-top: 0;
+      margin-bottom: 0;
     }
   }
   .info-right{
-    padding: 0 14px;
-    width: 50%;
+    padding: 10px;
+    background-color: white;
+    width: 35%;
     padding-bottom: 20px;
   }
 }
 
 .button{
-  border: 1px solid black;
-  padding: 5px;
+  border: 2px solid black;
+  padding: 10px;
   width: 100%;
   text-align: center;
   display: block;
   text-decoration: none;
-  color: black;
+  color: red;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+  background-color: red;
+}
+
+.slick-next{
+  position: fixed;
+  z-index: 999;
+  right: 14px;
+  background-color: red;
+  mask-image: url(./SVG/arrow.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  width: 6vw;
+  height: 6vw;
+  top: 50%;
+  &:before{
+    content: "";
+  }
+}
+
+.slick-prev{
+  position: fixed;
+  z-index: 999;
+  left: 14px;
+  background-color: red;
+  mask-image: url(./SVG/arrow.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  width: 6vw;
+  height: 6vw;
+  top: 50%;
+  &:before{
+    content: "";
+  }
 }
