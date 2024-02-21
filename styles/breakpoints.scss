@@ -4,6 +4,7 @@
     .slider-item{
       padding: 0 0%;
       overflow-y: scroll;
+      height: 100%;
       img{
         width: 100%;
         height: auto;
@@ -18,7 +19,7 @@
         padding: 0;
         // align-items: start;
         bottom: 0;
-        // position: relative;
+        position: relative;
         .info-left{
           width: 100%;
           p{
@@ -33,15 +34,15 @@
   }
   .slick-next{
     right: 0px;
-    top: 40vh;
+    top: 45vh;
     // bottom: 0;
     width: 40px;
     height: 40px;
   }
   .slick-prev{
-    top: 40vh;
+    top: 45vh;
     // bottom: 0;
-    left: 10px;
+    left: 8px;
     width: 40px;
     height: 40px;
   }
