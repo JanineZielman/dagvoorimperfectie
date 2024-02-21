@@ -203,7 +203,7 @@ p a{
 }
 
 .slick-next{
-  position: fixed;
+  position: absolute;
   z-index: 888;
   right: 14px;
   background-color: red;
@@ -221,7 +221,7 @@ p a{
 }
 
 .slick-prev{
-  position: fixed;
+  position: absolute;
   z-index: 888;
   left: 14px;
   background-color: red;
