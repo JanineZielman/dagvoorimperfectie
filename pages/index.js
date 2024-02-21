@@ -8,7 +8,8 @@ import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
 import Collapsible from 'react-collapsible';
 
-const Index = ({ page, slider_items, settings}) => {
+const Index = ({ page, settings}) => {
+  console.log(settings)
   // initialSlide
 
   var sliderSettings = {
@@ -45,21 +46,33 @@ const Index = ({ page, slider_items, settings}) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container">
+        <div className="top-bar">
+          {settings.data.socials.map((item, i) => {
+            return(
+              <div className="social-icon">
+                <PrismicLink field={item.link}>
+                  {/* <PrismicNextImage field={item.image}/> */}
+                  <div style={{"maskImage": `url(${item.image.url})`}}></div>
+                </PrismicLink>
+              </div>
+            )
+          })}
+        </div>
         <Collapsible>
           <PrismicRichText field={page.data.description}/>
         </Collapsible>
         <Slider {...sliderSettings} className="slider">
-          {slider_items.map((item, i) => {
+          {page.data.slider_items.map((item, i) => {
             return(
               <div className="slider-item" key={`slide${i}`}>
-                <PrismicNextImage field={item.data.image}/>
+                <PrismicNextImage field={item.slider_item.data.image}/>
                 <div className="flex-wrapper">
                   <div className="info-left">
-                    <h2>{item.data.title}</h2>
-                    <PrismicRichText field={item.data.description}/>
+                    <h2>{item.slider_item.data.title}</h2>
+                    <PrismicRichText field={item.slider_item.data.description}/>
                   </div>
                   <div className="info-right">
-                    <PrismicLink className="button" field={item.data.button_link}>{item.data.button_text}</PrismicLink>
+                    <PrismicLink className="button" field={item.slider_item.data.button_link}>{item.slider_item.data.button_text}</PrismicLink>
                   </div>
                 </div>
               </div>
@@ -76,14 +89,18 @@ export default Index;
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "home");
+  // const page = await client.getByUID("page", "home");
   const settings = await client.getSingle("settings");
-  const slider_items = await client.getAllByType("slider_item");
+  const page = await client.getByUID("page", "home", {
+    fetchLinks: `slider_item.image, slider_item.description, slider_item.title, slider_item.button_link, slider_item.button_text`
+  });
+
+  
+
 
 
   return {
     props: {
-      slider_items,
       page,
       settings
     },

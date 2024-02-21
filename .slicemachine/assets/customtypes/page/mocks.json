@@ -1,11 +1,11 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "equal"
+    "value": "definition"
   },
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "cut",
+    "value": "save",
     "type": "Text"
   },
   "description": {
@@ -14,8 +14,28 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Commodo Lorem ipsum et minim. Consectetur laborum nisi magna magna minim veniam dolore labore voluptate nisi sit. Id est magna in Lorem qui quis nisi adipisicing exercitation dolore."
+          "text": "Enim fugiat eiusmod nulla."
         }
+      }
+    ]
+  },
+  "slider_items": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "slider_item",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
       }
     ]
   }

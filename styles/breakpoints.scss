@@ -1,4 +1,4 @@
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
  
   .slider{
     .slider-item{
@@ -14,9 +14,11 @@
       }
       .flex-wrapper{
         flex-direction: column;
+        height: fit-content;
         padding: 0;
-        align-items: start;
-        position: relative;
+        // align-items: start;
+        bottom: 0;
+        // position: relative;
         .info-left{
           width: 100%;
           p{
@@ -30,14 +32,18 @@
     }
   }
   .slick-next{
-    right: -20px;
-    width: 50px;
-    height: 50px;
+    right: 0px;
+    top: 70vh;
+    // bottom: 0;
+    width: 40px;
+    height: 40px;
   }
   .slick-prev{
-    left: 0;
-    width: 50px;
-    height: 50px;
+    top: 70vh;
+    // bottom: 0;
+    left: 10px;
+    width: 40px;
+    height: 40px;
   }
   .Collapsible{
     .Collapsible__contentOuter{

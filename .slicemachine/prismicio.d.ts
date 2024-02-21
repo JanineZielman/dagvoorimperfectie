@@ -30,6 +30,33 @@ interface PageDocumentData {
      *
      */
     description: prismicT.RichTextField;
+    /**
+     * Slider Items field in *Page*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slider_items[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    slider_items: prismicT.GroupField<Simplify<PageDocumentDataSliderItemsItem>>;
+}
+/**
+ * Item in Page → Slider Items
+ *
+ */
+export interface PageDocumentDataSliderItemsItem {
+    /**
+     * Slider Item field in *Page → Slider Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slider_items[].slider_item
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    slider_item: prismicT.RelationField<"slider_item">;
 }
 /**
  * Page document from Prismic
@@ -76,6 +103,43 @@ interface SettingsDocumentData {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Socials field in *Settings*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.socials[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    socials: prismicT.GroupField<Simplify<SettingsDocumentDataSocialsItem>>;
+}
+/**
+ * Item in Settings → Socials
+ *
+ */
+export interface SettingsDocumentDataSocialsItem {
+    /**
+     * Image field in *Settings → Socials*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.socials[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Link field in *Settings → Socials*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.socials[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
 }
 /**
  * Settings document from Prismic
@@ -161,6 +225,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocument, SettingsDocumentData, SettingsDocument, SliderItemDocumentData, SliderItemDocument, AllDocumentTypes };
+        export type { PageDocumentData, PageDocumentDataSliderItemsItem, PageDocument, SettingsDocumentData, SettingsDocumentDataSocialsItem, SettingsDocument, SliderItemDocumentData, SliderItemDocument, AllDocumentTypes };
     }
 }

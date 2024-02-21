@@ -1,7 +1,11 @@
 {
   "_cts": {
-    "page": {},
+    "page": {
+      "slider_items": {}
+    },
     "slider_item": {},
-    "settings": {}
+    "settings": {
+      "socials": {}
+    }
   }
 }

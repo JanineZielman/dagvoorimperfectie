@@ -1,7 +1,7 @@
 {
   "site_title": {
     "__TYPE__": "FieldContent",
-    "value": "walk",
+    "value": "anybody",
     "type": "Text"
   },
   "site_description": {
@@ -10,7 +10,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Quis duis ullamco id voluptate non dolor et amet consequat incididunt aute."
+          "text": "Aliqua eu tempor culpa veniam commodo deserunt ex amet enim. Mollit occaecat Lorem commodo proident culpa amet. Magna aliquip adipisicing eu ut velit voluptate ad voluptate."
         }
       }
     ]
@@ -19,21 +19,65 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
-      "width": 3024,
-      "height": 3778
+      "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+      "width": 3424,
+      "height": 3424
     },
-    "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?rect=0%2C1098%2C3024%2C1583&w=1200&h=628",
+    "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?rect=0%2C816%2C3424%2C1792&w=1200&h=628",
     "width": 1200,
     "height": 628,
     "edit": {
       "zoom": 1,
       "crop": {
         "x": 0,
-        "y": 1098
+        "y": 816
       },
       "background": "transparent"
     },
     "thumbnails": {}
+  },
+  "socials": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+                "width": 3648,
+                "height": 4560
+              },
+              "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?rect=0%2C456%2C3648%2C3648&w=50&h=50",
+              "width": 50,
+              "height": 50,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 456
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://google.com"
+              }
+            }
+          ]
+        ]
+      }
+    ]
   }
 }
