@@ -49,9 +49,8 @@ const Index = ({ page, settings}) => {
         <div className="top-bar">
           {settings.data.socials.map((item, i) => {
             return(
-              <div className="social-icon">
+              <div className="social-icon" key={`social${i}`}>
                 <PrismicLink field={item.link}>
-                  {/* <PrismicNextImage field={item.image}/> */}
                   <div style={{"maskImage": `url(${item.image.url})`}}></div>
                 </PrismicLink>
               </div>
