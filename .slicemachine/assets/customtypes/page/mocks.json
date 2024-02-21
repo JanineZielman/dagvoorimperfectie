@@ -1,11 +1,11 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "definition"
+    "value": "dull"
   },
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "save",
+    "value": "studying",
     "type": "Text"
   },
   "description": {
@@ -14,7 +14,18 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Enim fugiat eiusmod nulla."
+          "text": "Tempor nostrud do anim duis aute esse exercitation veniam occaecat aute consectetur. Ipsum consequat commodo esse in pariatur ullamco ea aliquip sunt dolor commodo ex deserunt velit. Quis adipisicing id aliqua aliquip est."
+        }
+      }
+    ]
+  },
+  "credits": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Nisi deserunt Lorem enim."
         }
       }
     ]

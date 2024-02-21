@@ -28,6 +28,15 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
+      "credits": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Credits",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,em,strong,hyperlink,list-item,o-list-item"
+        }
+      },
       "slider_items": {
         "type": "Group",
         "config": {

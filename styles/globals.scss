@@ -17,6 +17,10 @@ body{
   font-family: "Calibre";
 }
 
+p a{
+  color: red;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -80,7 +84,7 @@ body{
       top: auto;
       &:after{
         transform: rotate(90deg) scaleX(-1);
-        margin-top: -20px;
+        margin-top: 15px;
       }
     }
   }
@@ -95,6 +99,13 @@ body{
       width: 100%;
       p{
         font-size: 24px;
+      }
+      .credits{ 
+        padding: 0;
+        margin-top: 48px;
+        p{
+          font-size: 16px;
+        }
       }
     }
   }
@@ -169,6 +180,7 @@ body{
     padding-bottom: 20px;
   }
 }
+
 
 .button{
   padding: 10px 30px;

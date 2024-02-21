@@ -31,6 +31,17 @@ interface PageDocumentData {
      */
     description: prismicT.RichTextField;
     /**
+     * Credits field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.credits
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    credits: prismicT.RichTextField;
+    /**
      * Slider Items field in *Page*
      *
      * - **Field Type**: Group

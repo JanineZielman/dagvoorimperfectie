@@ -59,6 +59,7 @@ const Index = ({ page, settings}) => {
         </div>
         <Collapsible>
           <PrismicRichText field={page.data.description}/>
+          <div className="credits"><PrismicRichText field={page.data.credits}/></div>
         </Collapsible>
         <Slider {...sliderSettings} className="slider">
           {page.data.slider_items.map((item, i) => {
